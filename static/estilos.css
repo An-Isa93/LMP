@@ -1,0 +1,64 @@
+*{
+    font-family: "Century Gothic";
+}
+table {
+    border-collapse: collapse; /* Colapsa los bordes en una sola línea */
+    width: 50%; /* Esto es opcional, ajusta el ancho de la tabla */
+}
+h1{
+    text-align: center;
+}
+
+table, th, td {
+    margin-top: 2%;
+    border: 1px solid black; 
+    text-align: center; 
+    margin-left: 25%;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+}
+.name label{
+    margin-right: 2%;
+}
+
+.last-name{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.last-name label{
+    margin-right: 2%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+  
+}
+
+.phone{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.phone label{
+    margin-right: 2%;
+}
+ input{
+    width: 25%;
+    height: 20px;
+ }
+input:focus{
+    outline: none;
+}
+button{
+    display: block;
+    margin-top: 2%;
+    width: 25%;
+    height: 30px;
+    margin-left: 3%;
+}
+

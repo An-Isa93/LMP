@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <h1>Agenda</h1>
+    <form method="POST" action="/agenda">
+        <div class="container">
+            <div class="name">
+                <label>Nombre: </label>
+                <input id="nombre" name="nombre" required>
+            </div>
+            <div class="last-name">
+                <label>Apellido: </label>
+                <input id="apellido" name="apellido" required>
+            </div>
+            <div class="phone">
+                <label>Teléfono: </label>
+                <input id="telefono" name="telefono" required>
+            </div>
+            <div class="btn">
+            <button type="submit">Agregar</button>
+            </div>
+        </div>
+    </form>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Telefono</th>
+        </thead>
+        <tbody>
+            {% for contacto in contactos %}
+            <tr>
+                <td>{{contacto[0]}}</td>
+                <td>{{contacto[1]}}</td>
+                <td>{{contacto[2]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
