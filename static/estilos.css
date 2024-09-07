@@ -61,4 +61,31 @@ button{
     height: 30px;
     margin-left: 3%;
 }
-
+.id{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+.id input{
+    margin-left: 4%;
+}
+.delete{
+    display: block;
+    margin-left: 20%;
+    margin-bottom: 2%;
+    width: 60%;
+    height: 30px;
+    color:white;
+    background: #fc1515;
+    border: 1px solid #e61c1c;
+}
+.update{
+    display: block;
+    margin-left: 20%;
+    margin-bottom: 2%;
+    width: 60%;
+    height: 30px;
+    color:white;
+    background: #51ce66;
+    border: 1px solid #51ce66;
+}

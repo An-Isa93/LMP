@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+   
 </head>
 <body>
     <h1>Agenda</h1>
     <form method="POST" action="/agenda">
         <div class="container">
+            <div class="id">
+                <label>Id: </label>
+                <input id="id" name="id" disabled>
+            </div>
             <div class="name">
                 <label>Nombre: </label>
                 <input id="nombre" name="nombre" required>
@@ -22,8 +27,10 @@
                 <label>Teléfono: </label>
                 <input id="telefono" name="telefono" required>
             </div>
+            <input type="hidden" id="contacto-id" name="contacto-id">
             <div class="btn">
             <button type="submit">Agregar</button>
+            <button type="button" onclick="updateContact()">Actualizar</button>
             </div>
         </div>
     </form>
@@ -32,16 +39,28 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Telefono</th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
         </thead>
         <tbody>
             {% for contacto in contactos %}
             <tr>
-                <td>{{contacto[0]}}</td>
                 <td>{{contacto[1]}}</td>
                 <td>{{contacto[2]}}</td>
+                <td>{{contacto[3]}}</td>
+                <td>
+                    <form method="POST" action="/eliminar">
+                        <input type="hidden" name="id" value="{{ contacto[0] }}">
+                        <button type="submit" class="delete">Eliminar</button>
+                    </form>
+                </td>
+                <td>
+                   <button class="update" onClick="mostrar('{{ contacto[0] }}', '{{ contacto[1] }}', '{{ contacto[2] }}', '{{ contacto[3] }}')">Actualizar</button>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
