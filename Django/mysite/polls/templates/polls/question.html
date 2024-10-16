@@ -1,0 +1,7 @@
+<h1>Question</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Send</button>
+</form>
+<a href="{%url 'polls:index'%}">Volver al listado</a>

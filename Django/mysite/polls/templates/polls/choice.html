@@ -1,0 +1,9 @@
+<h2>Choices</h2>
+<form method="POST">
+    <h1>Agregar opcion</h1>
+    <h2>Pregunta:{{question.question_text}}</h2>
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Send</button>
+    <a href="{%url 'polls:index'%}">Volver al listado</a>
+</form>
